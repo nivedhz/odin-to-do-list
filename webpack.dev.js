@@ -11,12 +11,14 @@ export default {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: "/odin-to-do-list/",
+    publicPath: "/",
   },
   devtool: "eval-source-map",
   devServer: {
     watchFiles: ["./src/template.html"],
-    static: "./dist",
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
     hot: true,
     open: true,
   },

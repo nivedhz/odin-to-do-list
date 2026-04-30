@@ -1,7 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+:root {
+  --clr-main-bgc: #fcfaf8;
+  --clr-btn-hover: rgba(0, 0, 0, 0.1);
+
+  --size-icon-lg: 32px;
+  --size-icon-m: 24px;
+}
+
 .sidebar-container {
-  background-color: #fcfaf8;
+  background-color: var(--clr-main-bgc);
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -37,18 +45,18 @@
   cursor: pointer;
 }
 .project-name__container:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--clr-btn-hover);
 }
 .project-heading__add-projects-btn {
-  max-width: 32px;
-  max-height: 32px;
+  max-width: var(--size-icon-lg);
+  max-height: var(--size-icon-lg);
   border-radius: 50%;
   transition: 100ms background-color ease-in;
 }
 .project-name__edit-btn:hover,
 .project-name__remove-btn:hover,
 .project-heading__add-projects-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--clr-btn-hover);
 }
 .project-name__btn-container {
   display: flex;
@@ -56,8 +64,8 @@
 }
 .project-name__edit-btn,
 .project-name__remove-btn {
-  max-width: 24px;
-  max-height: 24px;
+  max-width: var(--size-icon-m);
+  max-height: var(--size-icon-m);
   border-radius: 5px;
   transition: 100ms background-color ease-in;
   cursor: pointer;

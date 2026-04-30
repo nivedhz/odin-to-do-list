@@ -7,4 +7,5 @@ const DOM = {
   },
 };
 
-createSidebar(DOM.container.main);
+const sidebar = createSidebar();
+DOM.container.main.append(sidebar);

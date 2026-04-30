@@ -9,7 +9,7 @@ function createSidebar(mainContainer) {
   const project = createProjectDetails();
 
   sidebarContainer.append(account, project);
-  mainContainer.append(sidebarContainer);
+  return sidebarContainer;
 }
 
 export { createSidebar };

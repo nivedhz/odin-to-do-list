@@ -1,18 +1,14 @@
 import "./sidebar.css";
-import { renderProjectDetails } from "./ProjectDetails.js";
-import { renderAccountDetails } from "./AccountDetails.js";
+import { createProjectDetails } from "./ProjectDetails.js";
+import { createAccountDetails } from "./AccountDetails.js";
 
-const DOM = {
-  container: document.querySelector("#container"),
-};
-
-function renderSidebar() {
+function renderSidebar(mainContainer) {
   const sidebarContainer = document.createElement("div");
   sidebarContainer.classList.add("sidebar-container");
-  renderAccountDetails(sidebarContainer);
-  renderProjectDetails(sidebarContainer);
+  createAccountDetails(sidebarContainer);
+  createProjectDetails(sidebarContainer);
 
-  DOM.container.append(sidebarContainer);
+  mainContainer.append(sidebarContainer);
 }
 
 export { renderSidebar };

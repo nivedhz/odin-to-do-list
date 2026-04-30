@@ -1,6 +1,6 @@
 import userDefaultImage from "../assets/images/default-user.svg";
 
-export function renderAccountDetails(sidebarContainer) {
+export function createAccountDetails(sidebarContainer) {
   const accountContainer = document.createElement("div");
   const profileImg = document.createElement("img");
   const profileUsername = document.createElement("h1");

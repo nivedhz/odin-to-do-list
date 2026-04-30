@@ -2,7 +2,7 @@ import addProjectsImg from "../assets/images/add-project.svg";
 import editProjectImg from "../assets/images/edit-project.svg";
 import removeProjectImg from "../assets/images/delete-project.svg";
 
-function createProjectHeading(projectContainer) {
+function createProjectHeading() {
   const projectHeadingContainer = document.createElement("div");
   const myProjects = document.createElement("h2");
   const addProjectsBtn = document.createElement("button");
@@ -18,9 +18,9 @@ function createProjectHeading(projectContainer) {
   addProjects.src = addProjectsImg;
 
   projectHeadingContainer.append(myProjects, addProjectsBtn);
-  projectContainer.append(projectHeadingContainer);
+  return projectHeadingContainer;
 }
-function createProjectDetailName(projectContainer) {
+function createProjectDetailName() {
   const projectNameContainer = document.createElement("div");
   const projectName = document.createElement("h3");
   const projectBtnContainer = document.createElement("div");
@@ -44,15 +44,16 @@ function createProjectDetailName(projectContainer) {
 
   projectBtnContainer.append(editProjectBtn, removeProjectBtn);
   projectNameContainer.append(projectName, projectBtnContainer);
-  projectContainer.append(projectNameContainer);
+  return projectNameContainer;
 }
-export function createProjectDetails(sidebarContainer) {
+export function createProjectDetails() {
   const projectContainer = document.createElement("div");
   projectContainer.classList.add("project-container");
 
-  createProjectHeading(projectContainer);
-  createProjectDetailName(projectContainer);
-  createProjectDetailName(projectContainer);
+  const heading = createProjectHeading();
+  const project = createProjectDetailName();
+  const project2 = createProjectDetailName();
 
-  sidebarContainer.append(projectContainer);
+  projectContainer.append(heading, project, project2);
+  return projectContainer;
 }

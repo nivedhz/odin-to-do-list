@@ -2,13 +2,14 @@ import "./sidebar.css";
 import { createProjectDetails } from "./ProjectDetails.js";
 import { createAccountDetails } from "./AccountDetails.js";
 
-function renderSidebar(mainContainer) {
+function createSidebar(mainContainer) {
   const sidebarContainer = document.createElement("div");
   sidebarContainer.classList.add("sidebar-container");
-  createAccountDetails(sidebarContainer);
-  createProjectDetails(sidebarContainer);
+  const account = createAccountDetails();
+  const project = createProjectDetails();
 
+  sidebarContainer.append(account, project);
   mainContainer.append(sidebarContainer);
 }
 
-export { renderSidebar };
+export { createSidebar };

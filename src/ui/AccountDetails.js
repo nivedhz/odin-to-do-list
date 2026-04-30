@@ -1,6 +1,6 @@
 import userDefaultImage from "../assets/images/default-user.svg";
 
-export function createAccountDetails(sidebarContainer) {
+export function createAccountDetails() {
   const accountContainer = document.createElement("div");
   const profileImg = document.createElement("img");
   const profileUsername = document.createElement("h1");
@@ -13,5 +13,5 @@ export function createAccountDetails(sidebarContainer) {
   profileUsername.textContent = "User";
 
   accountContainer.append(profileImg, profileUsername);
-  sidebarContainer.append(accountContainer);
+  return accountContainer;
 }

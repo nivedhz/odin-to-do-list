@@ -1,5 +1,5 @@
 import "./styles/index.css";
-import { renderSidebar } from "./ui/Sidebar.js";
+import { createSidebar } from "./ui/Sidebar.js";
 
 const DOM = {
   container: {
@@ -7,4 +7,4 @@ const DOM = {
   },
 };
 
-renderSidebar(DOM.container.main);
+createSidebar(DOM.container.main);

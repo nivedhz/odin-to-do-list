@@ -2,7 +2,7 @@
 
 :root {
   --clr-main-bgc: #fcfaf8;
-  --clr-btn-hover: rgba(0, 0, 0, 0.1);
+  --clr-btn-hover: rgba(0, 0, 255, 0.1);
 
   --size-icon-lg: 32px;
   --size-icon-m: 24px;

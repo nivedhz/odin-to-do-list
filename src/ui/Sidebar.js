@@ -1,4 +1,4 @@
-import "./sidebar.css";
+import "../styles/sidebar.css";
 import { createProjectDetails } from "./ProjectDetails.js";
 import { createAccountDetails } from "./AccountDetails.js";
 

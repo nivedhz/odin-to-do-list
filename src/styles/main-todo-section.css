@@ -58,6 +58,9 @@
   align-items: center;
   transition: 100ms background-color ease-in;
   cursor: pointer;
+  border-left-width: 15px;
+  border-left-style: solid;
+  border-left-color: orange;
 }
 .todo__grid:hover {
   background-color: rgba(0, 0, 255, 0.1);
@@ -65,10 +68,21 @@
 .todo__right-container {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 .todo__checkbox {
+  appearance: none;
+  -webkit-appearance: none;
   min-width: 20px;
   min-height: 20px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  cursor: pointer;
+  outline: none;
+  transition: 200ms background-color ease-in;
+}
+.todo__checkbox:checked {
+  background-color: lightgreen;
 }
 .todo__name {
   font-family: "Poppins", sans-serif;

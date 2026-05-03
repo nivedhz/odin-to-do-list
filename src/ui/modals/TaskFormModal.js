@@ -73,7 +73,7 @@ function createTaskFormContent() {
 }
 function createTaskFormModal() {
   const taskModalContainer = document.createElement("div");
-  taskModalContainer.classList.add("task-modal__container");
+  taskModalContainer.classList.add("task-modal__container", "hidden");
 
   const formContainer = createTaskFormContent();
 

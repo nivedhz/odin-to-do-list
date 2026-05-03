@@ -54,7 +54,7 @@
   align-self: center;
   background-color: blue;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: bold;
   transition: 100ms background-color ease-in;
 }

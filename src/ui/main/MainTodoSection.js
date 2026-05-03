@@ -1,6 +1,6 @@
 import { createHeaderSection } from "./HeaderSection.js";
 import { createTodoSection } from "./TodoSection.js";
-import "../styles/main-todo-section.css";
+import "../../styles/main-todo-section.css";
 
 function createMainTodoSection() {
   const todoSectionContainer = document.createElement("div");

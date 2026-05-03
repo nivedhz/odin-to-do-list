@@ -1,4 +1,4 @@
-import addTaskImg from "../assets/images/add-task.svg";
+import addTaskImg from "../../assets/images/add-task.svg";
 
 function createHeaderSection() {
   const headerSection = document.createElement("div");

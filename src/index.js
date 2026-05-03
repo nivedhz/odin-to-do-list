@@ -1,7 +1,7 @@
 import "./styles/index.css";
-import { createSidebar } from "./ui/Sidebar.js";
-import { createMainTodoSection } from "./ui/MainTodoSection.js";
-import { createProfileFormModal } from "./ui/ProfileFormModal.js";
+import { createSidebar } from "./ui/sidebar/Sidebar.js";
+import { createMainTodoSection } from "./ui/main/MainTodoSection.js";
+import { createProfileFormModal } from "./ui/modals/ProfileFormModal.js";
 
 const DOM = {
   container: {

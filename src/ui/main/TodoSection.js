@@ -1,4 +1,4 @@
-import editTodoImg from "../assets/images/edit-todo.svg";
+import editTodoImg from "../../assets/images/edit-todo.svg";
 
 function createTodoDate() {
   const todoDate = document.createElement("h1");

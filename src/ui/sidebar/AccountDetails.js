@@ -1,4 +1,4 @@
-import userDefaultImage from "../assets/images/default-user.svg";
+import userDefaultImage from "../../assets/images/default-user.svg";
 
 export function createAccountDetails() {
   const accountContainer = document.createElement("div");

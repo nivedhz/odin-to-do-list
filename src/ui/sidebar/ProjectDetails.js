@@ -1,6 +1,6 @@
-import addProjectsImg from "../assets/images/add-project.svg";
-import editProjectImg from "../assets/images/edit-project.svg";
-import removeProjectImg from "../assets/images/delete-project.svg";
+import addProjectsImg from "../../assets/images/add-project.svg";
+import editProjectImg from "../../assets/images/edit-project.svg";
+import removeProjectImg from "../../assets/images/delete-project.svg";
 
 function createProjectHeading() {
   const projectHeadingContainer = document.createElement("div");

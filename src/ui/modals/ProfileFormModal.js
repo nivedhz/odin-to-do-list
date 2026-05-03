@@ -1,5 +1,5 @@
-import defaultUserProfile from "../assets/images/default-user.svg";
-import "../styles/profile-modal-form.css";
+import defaultUserProfile from "../../assets/images/default-user.svg";
+import "../../styles/profile-modal-form.css";
 
 function createProfileFormModal() {
   const modalContainer = document.createElement("div");

@@ -1,7 +1,8 @@
-#profile-modal__img-preview {
+.profile-modal__img-preview {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .profile-modal__container {
   display: flex;

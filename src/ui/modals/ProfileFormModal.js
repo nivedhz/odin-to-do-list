@@ -4,16 +4,23 @@ import "../../styles/profile-modal-form.css";
 function createImgForm() {
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("profile-modal__img-container");
+  const imgWrapper = document.createElement("div");
+  imgWrapper.classList.add("profile-modal__img-wrapper");
+  const imgIconOverlay = document.createElement("label");
+  imgIconOverlay.setAttribute("for", "ImgUpload");
   const imgPreview = document.createElement("img");
-  imgPreview.id = "profile-modal__img-preview";
+  imgPreview.classList.add("profile-modal__img-preview");
   imgPreview.src = defaultUserProfile;
   const imgInput = document.createElement("input");
+  imgInput.id = "ImgUpload";
   imgInput.setAttribute("name", "profilePicture");
-  imgInput.classList.add("profile-modal__img-input");
+  imgInput.classList.add("profile-modal__img-input", "hidden");
   imgInput.type = "file";
   imgInput.accept = "image/*";
 
-  imgContainer.append(imgPreview, imgInput);
+  imgIconOverlay.append(imgPreview);
+  imgWrapper.append(imgIconOverlay);
+  imgContainer.append(imgWrapper, imgInput);
   return imgContainer;
 }
 function createUsernameForm() {
@@ -26,6 +33,7 @@ function createUsernameForm() {
   usernameInput.id = "profile-modal__username";
   usernameInput.classList.add("profile-modal__username-input");
   usernameInput.required = true;
+  usernameInput.placeholder = "John";
   usernameLabel.textContent = "Username: ";
 
   usernameContainer.append(usernameLabel, usernameInput);
@@ -34,7 +42,7 @@ function createUsernameForm() {
 
 function createProfileFormModal() {
   const modalContainer = document.createElement("div");
-  modalContainer.classList.add("profile-modal__container", "hidden");
+  modalContainer.classList.add("profile-modal__container");
   const formContainer = document.createElement("form");
   formContainer.method = "POST";
   formContainer.classList.add("profile-modal__form-container");

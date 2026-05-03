@@ -2,6 +2,7 @@ import "../../styles/project-form-modal.css";
 
 function createProjectFormContent() {
   const formContainer = document.createElement("form");
+  formContainer.method = "POST";
   formContainer.classList.add("project-modal__form-container");
 
   const nameLabel = document.createElement("label");

@@ -12,6 +12,8 @@ function createTodoDate() {
 function createTodoElement() {
   const todoEl = document.createElement("div");
   todoEl.classList.add("todo__grid");
+  const todoDefaultContainer = document.createElement("div");
+  todoDefaultContainer.classList.add("todo__default-container");
   const todoRightContainer = document.createElement("div");
   todoRightContainer.classList.add("todo__right-container");
   const checkBox = document.createElement("input");
@@ -23,13 +25,25 @@ function createTodoElement() {
   editTodoBtn.classList.add("todo__edit-btn");
   const editTodoImgEl = document.createElement("img");
   editTodoImgEl.classList.add("todo__edit-img");
+  const todoPriority = document.createElement("p");
+  const todoDueDate = document.createElement("p");
+  const todolongSummary = document.createElement("p");
+  todoPriority.textContent = "Priority: Medium";
+  todoDueDate.textContent = "Date: 24-12-2024";
+  todolongSummary.textContent = "Long Summary: Very fucking long summary";
 
   todoName.textContent = "Todo 1";
   editTodoImgEl.src = editTodoImg;
 
   editTodoBtn.append(editTodoImgEl);
   todoRightContainer.append(checkBox, todoName);
-  todoEl.append(todoRightContainer, editTodoBtn);
+  todoDefaultContainer.append(todoRightContainer, editTodoBtn);
+  todoEl.append(
+    todoDefaultContainer,
+    todoPriority,
+    todoDueDate,
+    todolongSummary,
+  );
   return todoEl;
 }
 

@@ -1,5 +1,5 @@
 import defaultUserProfile from "../../assets/images/default-user.svg";
-import "../../styles/profile-modal-form.css";
+import "../../styles/profile-form-modal.css";
 
 function createImgForm() {
   const imgContainer = document.createElement("div");

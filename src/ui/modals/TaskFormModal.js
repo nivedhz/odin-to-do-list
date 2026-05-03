@@ -59,6 +59,7 @@ function createTaskFormContent() {
   longSummaryInput.placeholder = "Type Long Summary Here...";
 
   const submitBtn = document.createElement("button");
+  submitBtn.type = "submit";
   submitBtn.textContent = "Submit";
   submitBtn.classList.add("task-modal__submit-btn");
 

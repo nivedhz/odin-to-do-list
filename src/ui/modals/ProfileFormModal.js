@@ -11,6 +11,8 @@ function createImgForm() {
   const imgPreview = document.createElement("img");
   imgPreview.classList.add("profile-modal__img-preview");
   imgPreview.src = defaultUserProfile;
+  const imgInfo = document.createElement("p");
+  imgInfo.textContent = "Add a Profile Picutre";
   const imgInput = document.createElement("input");
   imgInput.id = "ImgUpload";
   imgInput.setAttribute("name", "profilePicture");
@@ -19,7 +21,7 @@ function createImgForm() {
   imgInput.accept = "image/*";
 
   imgIconOverlay.append(imgPreview);
-  imgWrapper.append(imgIconOverlay);
+  imgWrapper.append(imgIconOverlay, imgInfo);
   imgContainer.append(imgWrapper, imgInput);
   return imgContainer;
 }

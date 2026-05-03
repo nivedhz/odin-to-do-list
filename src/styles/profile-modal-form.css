@@ -3,6 +3,7 @@
   height: 150px;
   border-radius: 50%;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .profile-modal__container {
   display: flex;
@@ -13,6 +14,7 @@
   min-height: 100vh;
   min-width: 100vw;
   background-color: rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
 }
 .profile-modal__form-container {
   background-color: #fff;
@@ -58,4 +60,11 @@
 }
 .profile-modal__username-btn:hover {
   background-color: rgba(0, 0, 255, 0.8);
+}
+
+.profile-modal__img-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
 }

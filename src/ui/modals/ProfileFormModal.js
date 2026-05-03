@@ -42,7 +42,7 @@ function createUsernameForm() {
 
 function createProfileFormModal() {
   const modalContainer = document.createElement("div");
-  modalContainer.classList.add("profile-modal__container");
+  modalContainer.classList.add("profile-modal__container", "hidden");
   const formContainer = document.createElement("form");
   formContainer.method = "POST";
   formContainer.classList.add("profile-modal__form-container");

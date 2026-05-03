@@ -67,7 +67,7 @@
   overflow: hidden;
 }
 .todo__grid:hover {
-  background-color: rgba(0, 0, 255, 0.1);
+  background-color: rgba(0, 255, 0, 0.1);
   max-height: 500px;
 }
 .todo__right-container {

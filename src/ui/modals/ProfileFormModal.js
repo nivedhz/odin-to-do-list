@@ -49,6 +49,11 @@ function createProfileFormModal() {
   formContainer.method = "POST";
   formContainer.classList.add("profile-modal__form-container");
 
+  const quitForm = document.createElement("button");
+  quitForm.classList.add("profile-modal__quit-btn");
+  quitForm.type = "button";
+  quitForm.textContent = "X";
+
   const profileSubmitBtn = document.createElement("button");
   profileSubmitBtn.classList.add("profile-modal__username-btn");
   profileSubmitBtn.type = "submit";
@@ -57,7 +62,12 @@ function createProfileFormModal() {
   const imgContainer = createImgForm();
   const usernameContainer = createUsernameForm();
 
-  formContainer.append(imgContainer, usernameContainer, profileSubmitBtn);
+  formContainer.append(
+    quitForm,
+    imgContainer,
+    usernameContainer,
+    profileSubmitBtn,
+  );
   modalContainer.append(formContainer);
   return modalContainer;
 }

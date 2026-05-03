@@ -22,7 +22,12 @@ function createProjectFormContent() {
   submitBtn.textContent = "Submit";
   submitBtn.classList.add("project-modal__submit-btn");
 
-  formContainer.append(nameLabel, submitBtn);
+  const quitForm = document.createElement("button");
+  quitForm.classList.add("project-modal__quit-btn");
+  quitForm.type = "button";
+  quitForm.textContent = "X";
+
+  formContainer.append(quitForm, nameLabel, submitBtn);
   return formContainer;
 }
 

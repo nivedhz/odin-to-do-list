@@ -41,3 +41,6 @@
 .task-modal__submit-btn:hover {
   background-color: rgba(0, 0, 255, 0.8);
 }
+.task-modal__quit-btn {
+  align-self: end;
+}

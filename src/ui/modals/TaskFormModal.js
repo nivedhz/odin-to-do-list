@@ -63,7 +63,13 @@ function createTaskFormContent() {
   submitBtn.textContent = "Submit";
   submitBtn.classList.add("task-modal__submit-btn");
 
+  const quitForm = document.createElement("button");
+  quitForm.classList.add("task-modal__quit-btn");
+  quitForm.type = "button";
+  quitForm.textContent = "X";
+
   formContainer.append(
+    quitForm,
     nameLabel,
     priorityLabel,
     dueDateLabel,

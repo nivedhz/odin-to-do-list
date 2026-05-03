@@ -1,3 +1,6 @@
+.profile-modal__quit-btn {
+  align-self: end;
+}
 .profile-modal__img-preview {
   width: 150px;
   height: 150px;

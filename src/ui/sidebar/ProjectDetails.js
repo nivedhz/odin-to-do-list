@@ -11,6 +11,7 @@ function createProjectHeading() {
   projectHeadingContainer.classList.add("project-heading__container");
   myProjects.classList.add("project-heading__my-projects-heading");
   addProjects.classList.add("project-heading__add-projects-btn");
+  addProjectsBtn.classList.add("project__add-btn");
 
   addProjectsBtn.append(addProjects);
 
@@ -29,6 +30,8 @@ function createProjectDetailName() {
   const removeProjectBtn = document.createElement("button");
   const removeProject = document.createElement("img");
 
+  editProjectBtn.classList.add("project__edit-btn");
+  removeProjectBtn.classList.add("project__remove-btn");
   projectNameContainer.classList.add("project-name__container");
   projectName.classList.add("project-name__heading");
   projectBtnContainer.classList.add("project-name__btn-container");

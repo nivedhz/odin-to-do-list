@@ -1,6 +1,6 @@
-import { initTodoModal } from "./initTodoModal.js";
-import { initProjectModal } from "./initProjectModal.js";
-import { initUserModal } from "./initUserModal.js";
+import { initTodoModal } from "./todoModal.js";
+import { initProjectModal } from "./projectModal.js";
+import { initUserModal } from "./userModal.js";
 function initDefaultModals() {
   initProjectModal();
   initTodoModal();

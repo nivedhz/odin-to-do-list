@@ -1,10 +1,6 @@
 import "./styles/index.css";
 import { renderMainContent, renderModals } from "./ui/render.js";
-import {
-  initProjectModal,
-  initTodoModal,
-  initUserModal,
-} from "./handlers/initDefaultModals.js";
+import { initDefaultModals } from "./handlers/initDefaultModals.js";
 
 const DOM = {
   container: {
@@ -15,6 +11,4 @@ const DOM = {
 
 renderMainContent(DOM.container.main);
 renderModals(DOM.container.body);
-initUserModal();
-initProjectModal();
-initTodoModal();
+initDefaultModals();

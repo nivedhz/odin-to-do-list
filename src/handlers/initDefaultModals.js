@@ -1,3 +1,9 @@
-export { initTodoModal } from "./initTodoModal.js";
-export { initProjectModal } from "./initProjectModal.js";
-export { initUserModal } from "./initUserModal.js";
+import { initTodoModal } from "./initTodoModal.js";
+import { initProjectModal } from "./initProjectModal.js";
+import { initUserModal } from "./initUserModal.js";
+function initDefaultModals() {
+  initProjectModal();
+  initTodoModal();
+  initUserModal();
+}
+export { initDefaultModals };

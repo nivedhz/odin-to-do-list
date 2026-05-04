@@ -56,7 +56,7 @@
   outline: 2px solid black;
   transition:
     100ms background-color ease-in,
-    300ms max-height ease-in;
+    300ms max-height ease-in-out;
   cursor: pointer;
   border-left-width: 15px;
   border-left-style: solid;
@@ -68,6 +68,8 @@
 }
 .todo__grid:hover {
   background-color: rgba(0, 255, 0, 0.1);
+}
+.todo-grid__onclick {
   max-height: 500px;
 }
 .todo__right-container {

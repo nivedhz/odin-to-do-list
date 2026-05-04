@@ -1,4 +1,6 @@
 .profile-modal__quit-btn {
+  font-weight: bold;
+  font-size: 1rem;
   align-self: end;
 }
 .profile-modal__img-preview {

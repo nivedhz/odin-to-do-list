@@ -39,5 +39,7 @@
   background-color: rgba(0, 0, 255, 0.8);
 }
 .project-modal__quit-btn {
+  font-weight: bold;
+  font-size: 1rem;
   align-self: end;
 }

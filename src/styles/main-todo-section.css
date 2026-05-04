@@ -63,7 +63,7 @@
   border-left-color: orange;
   gap: 1rem;
   font-family: "Poppins", sans-serif;
-  max-height: 55px;
+  max-height: 60px;
   overflow: hidden;
 }
 .todo__grid:hover {

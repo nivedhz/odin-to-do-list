@@ -22,8 +22,14 @@ button {
 .account__container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.7rem;
   padding: 0.5rem;
+}
+.profile__right-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 .profile__img {
   max-width: 32px;
@@ -57,6 +63,7 @@ button {
   border-radius: 50%;
   transition: 100ms background-color ease-in;
 }
+.profile__btn-img:hover,
 .project-name__edit-btn:hover,
 .project-name__remove-btn:hover,
 .project-heading__add-projects-btn:hover {
@@ -66,6 +73,7 @@ button {
   display: flex;
   gap: 0.5rem;
 }
+.profile__btn-img,
 .project-name__edit-btn,
 .project-name__remove-btn {
   max-width: var(--size-icon-m);

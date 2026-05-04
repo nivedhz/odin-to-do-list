@@ -26,6 +26,9 @@
   border-radius: 10px;
   border: 1px solid #000;
 }
+.task-modal__long-summary-input {
+  resize: none;
+}
 .task-modal__submit-btn {
   border: 2px solid black;
   padding: 1rem;
@@ -42,5 +45,7 @@
   background-color: rgba(0, 0, 255, 0.8);
 }
 .task-modal__quit-btn {
+  font-weight: bold;
+  font-size: 1rem;
   align-self: end;
 }

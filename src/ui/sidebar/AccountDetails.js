@@ -14,6 +14,7 @@ export function createAccountDetails() {
   profileUsername.classList.add("profile__username");
   profileBtnImg.classList.add("profile__btn-img");
   rightContainer.classList.add("profile__right-container");
+  addProfileBtn.classList.add("profile__btn");
 
   profileBtnImg.src = editBtn;
   profileImg.src = userDefaultImage;

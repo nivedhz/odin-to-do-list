@@ -21,9 +21,9 @@ function createProjectHeading() {
   projectHeadingContainer.append(myProjects, addProjectsBtn);
   return projectHeadingContainer;
 }
-function createProjectDetailName() {
+export function createProjectDetailName(projectName) {
   const projectNameContainer = document.createElement("div");
-  const projectName = document.createElement("h3");
+  const projectNameEl = document.createElement("h3");
   const projectBtnContainer = document.createElement("div");
   const editProjectBtn = document.createElement("button");
   const editProject = document.createElement("img");
@@ -33,7 +33,7 @@ function createProjectDetailName() {
   editProjectBtn.classList.add("project__edit-btn");
   removeProjectBtn.classList.add("project__remove-btn");
   projectNameContainer.classList.add("project-name__container");
-  projectName.classList.add("project-name__heading");
+  projectNameEl.classList.add("project-name__heading");
   projectBtnContainer.classList.add("project-name__btn-container");
   editProject.classList.add("project-name__edit-btn");
   removeProject.classList.add("project-name__remove-btn");
@@ -41,22 +41,22 @@ function createProjectDetailName() {
   editProjectBtn.append(editProject);
   removeProjectBtn.append(removeProject);
 
-  projectName.textContent = "## Project 1";
+  projectNameEl.textContent = `## ${projectName}`;
   editProject.src = editProjectImg;
   removeProject.src = removeProjectImg;
 
   projectBtnContainer.append(editProjectBtn, removeProjectBtn);
-  projectNameContainer.append(projectName, projectBtnContainer);
+  projectNameContainer.append(projectNameEl, projectBtnContainer);
   return projectNameContainer;
 }
 export function createProjectDetails() {
   const projectContainer = document.createElement("div");
   projectContainer.classList.add("project-container");
+  const projectBottomContainer = document.createElement("div");
+  projectBottomContainer.classList.add("project__bottom-container");
 
   const heading = createProjectHeading();
-  const project = createProjectDetailName();
-  const project2 = createProjectDetailName();
 
-  projectContainer.append(heading, project, project2);
+  projectContainer.append(heading, projectBottomContainer);
   return projectContainer;
 }

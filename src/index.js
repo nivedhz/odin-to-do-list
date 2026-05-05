@@ -1,6 +1,6 @@
 import "./styles/index.css";
 import { renderMainContent, renderModals } from "./ui/render.js";
-import { initDefaultModals } from "./handlers/initDefaultModals.js";
+import { initDefaultFunctions } from "./handlers/initDefaultFunctions.js";
 
 const DOM = {
   container: {
@@ -11,4 +11,4 @@ const DOM = {
 
 renderMainContent(DOM.container.main);
 renderModals(DOM.container.body);
-initDefaultModals();
+initDefaultFunctions();

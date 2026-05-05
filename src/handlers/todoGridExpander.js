@@ -5,4 +5,4 @@ function todoGridExpander() {
     e.target.closest(".todo__grid").classList.toggle("todo-grid__onclick");
   });
 }
-export { todoGridListener };
+export { todoGridExpander };

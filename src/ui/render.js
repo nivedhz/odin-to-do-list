@@ -5,6 +5,8 @@ import {
   createTaskFormModal,
   createProjectFormModal,
 } from "./modals/modal.js";
+import { createProjectDetailName } from "../ui/sidebar/ProjectDetails.js";
+import { state } from "../data/state.js";
 
 function renderMainContent(container) {
   const sidebar = createSidebar();
@@ -21,4 +23,16 @@ function renderModals(root) {
   root.prepend(userModal, taskModal, projectModal);
 }
 
-export { renderMainContent, renderModals };
+function reloadProjects() {
+  if (document.querySelector(".project-name__container")) {
+    document.querySelector(".project__bottom-container").replaceChildren();
+  }
+  state.projects.forEach((project) => {
+    document
+      .querySelector(".project__bottom-container")
+      .append(createProjectDetailName(project.projectName));
+  });
+  document.querySelector(".project-modal__form-container").reset();
+}
+
+export { renderMainContent, renderModals, reloadProjects };

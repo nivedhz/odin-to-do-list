@@ -45,6 +45,12 @@ export function createProjectDetailName(projectName) {
   editProject.src = editProjectImg;
   removeProject.src = removeProjectImg;
 
+  editProjectBtn.addEventListener("click", () => {
+    document
+      .querySelector(".project-modal__container")
+      .classList.toggle("hidden");
+  });
+
   projectBtnContainer.append(editProjectBtn, removeProjectBtn);
   projectNameContainer.append(projectNameEl, projectBtnContainer);
   return projectNameContainer;

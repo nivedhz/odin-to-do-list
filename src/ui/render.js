@@ -24,15 +24,12 @@ function renderModals(root) {
 }
 
 function reloadProjects() {
-  if (document.querySelector(".project-name__container")) {
-    document.querySelector(".project__bottom-container").replaceChildren();
-  }
+  document.querySelector(".project__bottom-container").replaceChildren();
   state.projects.forEach((project) => {
     document
       .querySelector(".project__bottom-container")
       .append(createProjectDetailName(project.projectName));
   });
-  document.querySelector(".project-modal__form-container").reset();
 }
 
 export { renderMainContent, renderModals, reloadProjects };

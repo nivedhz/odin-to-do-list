@@ -24,6 +24,10 @@ function initProjectModal() {
       const values = Object.fromEntries(data.entries());
       createProject(values.projectName);
       reloadProjects();
+      document
+        .querySelector(".project-name__edit-btn")
+        .addEventListener("click", toggleHidden);
+      document.querySelector(".project-modal__form-container").reset();
     });
 }
 

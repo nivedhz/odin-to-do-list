@@ -6,8 +6,12 @@ function initTodoModal() {
         .querySelector(".task-modal__container")
         .classList.remove("hidden");
     });
-  document.querySelector(".todo__edit-btn").addEventListener("click", () => {
-    document.querySelector(".task-modal__container").classList.remove("hidden");
+  document.querySelectorAll(".todo__edit-btn").forEach((editBtn) => {
+    editBtn.addEventListener("click", () => {
+      document
+        .querySelector(".task-modal__container")
+        .classList.remove("hidden");
+    });
   });
   document
     .querySelector(".task-modal__quit-btn")

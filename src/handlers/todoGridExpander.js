@@ -1,4 +1,4 @@
-function todoGridListener() {
+function todoGridExpander() {
   document.querySelector(".todo__container").addEventListener("click", (e) => {
     if (!e.target.closest(".todo__grid")) return;
     if (e.target.closest(".todo__edit-btn")) return;

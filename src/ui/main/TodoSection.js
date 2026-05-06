@@ -33,9 +33,9 @@ function createTodoElement(
   const todoPriorityEl = document.createElement("p");
   const todoDueDateEl = document.createElement("p");
   const todoLongSummaryEl = document.createElement("p");
-  todoPriorityEl.textContent = todoPriority;
-  todoDueDateEl.textContent = todoDueDate;
-  todoLongSummaryEl.textContent = todoLongSummary;
+  todoPriorityEl.textContent = `Priority: ${todoPriority}`;
+  todoDueDateEl.textContent = `Due Date: ${todoDueDate}`;
+  todoLongSummaryEl.textContent = `Long Summary: ${todoLongSummary}`;
 
   if (todoPriority === "Low") todoEl.classList.add("low-priority");
   if (todoPriority === "Medium") todoEl.classList.add("medium-priority");

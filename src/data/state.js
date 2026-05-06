@@ -1,5 +1,11 @@
 const state = {
-  projects: [],
+  projects: [
+    {
+      projectName: "Starting Project",
+      projectId: crypto.randomUUID(),
+      todo: [],
+    },
+  ],
   currentProject: null,
 };
 

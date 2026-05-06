@@ -9,7 +9,12 @@ function createTodoDate() {
   return todoDate;
 }
 
-function createTodoElement() {
+function createTodoElement(
+  todoName,
+  todoPriority,
+  todoDueDate,
+  todoLongSummary,
+) {
   const todoEl = document.createElement("div");
   todoEl.classList.add("todo__grid");
   const todoDefaultContainer = document.createElement("div");
@@ -19,30 +24,34 @@ function createTodoElement() {
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
   checkBox.classList.add("todo__checkbox");
-  const todoName = document.createElement("h2");
-  todoName.classList.add("todo__name");
+  const todoNameEl = document.createElement("h2");
+  todoNameEl.classList.add("todo__name");
   const editTodoBtn = document.createElement("button");
   editTodoBtn.classList.add("todo__edit-btn");
   const editTodoImgEl = document.createElement("img");
   editTodoImgEl.classList.add("todo__edit-img");
-  const todoPriority = document.createElement("p");
-  const todoDueDate = document.createElement("p");
-  const todolongSummary = document.createElement("p");
-  todoPriority.textContent = "Priority: Medium";
-  todoDueDate.textContent = "Date: 24-12-2024";
-  todolongSummary.textContent = "Long Summary: Very fucking long summary";
+  const todoPriorityEl = document.createElement("p");
+  const todoDueDateEl = document.createElement("p");
+  const todoLongSummaryEl = document.createElement("p");
+  todoPriorityEl.textContent = todoPriority;
+  todoDueDateEl.textContent = todoDueDate;
+  todoLongSummaryEl.textContent = todoLongSummary;
 
-  todoName.textContent = "Todo 1";
+  if (todoPriority === "Low") todoEl.classList.add("low-priority");
+  if (todoPriority === "Medium") todoEl.classList.add("medium-priority");
+  if (todoPriority === "High") todoEl.classList.add("high-priority");
+
+  todoNameEl.textContent = todoName;
   editTodoImgEl.src = editTodoImg;
 
   editTodoBtn.append(editTodoImgEl);
-  todoRightContainer.append(checkBox, todoName);
+  todoRightContainer.append(checkBox, todoNameEl);
   todoDefaultContainer.append(todoRightContainer, editTodoBtn);
   todoEl.append(
     todoDefaultContainer,
-    todoPriority,
-    todoDueDate,
-    todolongSummary,
+    todoPriorityEl,
+    todoDueDateEl,
+    todoLongSummaryEl,
   );
   return todoEl;
 }
@@ -51,12 +60,6 @@ function createtodoContainer() {
   const todoContainer = document.createElement("div");
   todoContainer.classList.add("todo__container");
 
-  const todoItem = createTodoElement();
-  const todoItem2 = createTodoElement();
-  const todoItem3 = createTodoElement();
-  const todoItem4 = createTodoElement();
-
-  todoContainer.append(todoItem, todoItem2, todoItem3, todoItem4);
   return todoContainer;
 }
 
@@ -71,4 +74,4 @@ function createTodoSection() {
   return todoSection;
 }
 
-export { createTodoSection };
+export { createTodoSection, createTodoElement };

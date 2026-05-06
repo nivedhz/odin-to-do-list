@@ -6,6 +6,7 @@ import {
   createProjectFormModal,
 } from "./modals/modal.js";
 import { createProjectDetailName } from "../ui/sidebar/ProjectDetails.js";
+import { createTodoElement } from "./main/TodoSection.js";
 import { state } from "../data/state.js";
 
 function renderMainContent(container) {
@@ -31,5 +32,24 @@ function renderProjects() {
       .append(createProjectDetailName(project.projectName));
   });
 }
+function renderTodo(projectId) {
+  document.querySelector(".todo__container").replaceChildren();
+  state.projects.forEach((project) => {
+    if (project.projectId === projectId) {
+      project.todo.forEach((todo) => {
+        document
+          .querySelector(".todo__container")
+          .append(
+            createTodoElement(
+              todo.name,
+              todo.priority,
+              todo.date,
+              todo.longSummary,
+            ),
+          );
+      });
+    }
+  });
+}
 
-export { renderMainContent, renderModals, renderProjects };
+export { renderMainContent, renderModals, renderProjects, renderTodo };

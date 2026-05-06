@@ -1,5 +1,6 @@
 const state = {
   projects: [],
+  currentProject: null,
 };
 
 function createProject(projectName) {
@@ -9,16 +10,22 @@ function createProject(projectName) {
     todo: [],
   };
   state.projects.push(Project);
+  state.currentProject = state.projects[0];
 }
-function createTodo(name, priority, date, longSummary) {
+function createTodo(name, projectId, priority, date, longSummary) {
   const Todo = {
     name,
     todoId: crypto.randomUUID(),
-    projectId: this.projectId,
+    projectId,
     priority,
     date,
     longSummary,
   };
+  state.projects.forEach((project) => {
+    if (project.projectId === projectId) {
+      project.todo.push(Todo);
+    }
+  });
 }
 
 export { state, createProject, createTodo };

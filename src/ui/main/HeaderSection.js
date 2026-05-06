@@ -3,8 +3,8 @@ import addTaskImg from "../../assets/images/add-task.svg";
 function createHeaderSection() {
   const headerSection = document.createElement("div");
   headerSection.classList.add("header-section");
-  const projectName = document.createElement("h1");
-  projectName.classList.add("header__project-name");
+  const projectNameEl = document.createElement("h1");
+  projectNameEl.classList.add("header__project-name");
   const addTodo = document.createElement("button");
   addTodo.classList.add("header__add-todo-btn");
   const addTodoImg = document.createElement("img");
@@ -12,10 +12,10 @@ function createHeaderSection() {
 
   addTodo.append(addTodoImg);
 
-  projectName.textContent = "# Project 1";
+  projectNameEl.textContent = "# Project 1";
   addTodoImg.src = addTaskImg;
 
-  headerSection.append(projectName, addTodo);
+  headerSection.append(projectNameEl, addTodo);
   return headerSection;
 }
 

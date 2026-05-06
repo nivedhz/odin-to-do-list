@@ -25,14 +25,14 @@ function createTaskFormContent() {
   prioritySelect.name = "taskPriority";
   prioritySelect.id = "taskPriority";
   const lowOption = document.createElement("option");
-  lowOption.value = "low";
+  lowOption.value = "Low";
   lowOption.textContent = "Low";
   const mediumOption = document.createElement("option");
-  mediumOption.value = "medium";
+  mediumOption.value = "Medium";
   mediumOption.textContent = "Medium";
   mediumOption.selected = true;
   const highOption = document.createElement("option");
-  highOption.value = "high";
+  highOption.value = "High";
   highOption.textContent = "High";
   prioritySelect.append(lowOption, mediumOption, highOption);
   priorityLabel.append(prioritySelect);

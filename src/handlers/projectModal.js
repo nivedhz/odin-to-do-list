@@ -1,7 +1,7 @@
 import { createProject } from "../data/state.js";
 import { renderProjects } from "../ui/render.js";
 
-export function projectModalToggleHidden() {
+function projectModalToggleHidden() {
   document
     .querySelector(".project-modal__container")
     .classList.toggle("hidden");

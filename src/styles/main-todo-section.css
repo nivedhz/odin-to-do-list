@@ -61,7 +61,6 @@
   cursor: pointer;
   border-left-width: 15px;
   border-left-style: solid;
-  border-left-color: orange;
   gap: 1rem;
   font-family: "Poppins", sans-serif;
   max-height: 60px;
@@ -105,4 +104,13 @@
 .todo__default-container {
   display: flex;
   justify-content: space-between;
+}
+.low-priority {
+  border-left-color: greenyellow;
+}
+.medium-priority {
+  border-left-color: orange;
+}
+.high-priority {
+  border-left-color: red;
 }

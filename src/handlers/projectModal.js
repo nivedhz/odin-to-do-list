@@ -21,6 +21,19 @@ function initProjectModal() {
       renderProjects();
       document.querySelector(".project-modal__form-container").reset();
     });
+  document
+    .querySelector(".project__add-btn")
+    .addEventListener("click", projectModalToggleHidden);
+  document
+    .querySelector(".project-modal__quit-btn")
+    .addEventListener("click", projectModalToggleHidden);
+  document
+    .querySelector(".project__bottom-container")
+    .addEventListener("click", (e) => {
+      if (e.target.closest(".project__edit-btn")) {
+        projectModalToggleHidden();
+      }
+    });
 }
 
 export { initProjectModal };

@@ -1,9 +1,5 @@
 import "./styles/index.css";
-import {
-  renderMainContent,
-  renderModals,
-  renderProjects,
-} from "./ui/render.js";
+import { renderMainContent, renderModals } from "./ui/render.js";
 import { initDefaultFunctions } from "./handlers/initDefaultFunctions.js";
 
 const DOM = {
@@ -15,5 +11,4 @@ const DOM = {
 
 renderMainContent(DOM.container.main);
 renderModals(DOM.container.body);
-renderProjects();
 initDefaultFunctions();

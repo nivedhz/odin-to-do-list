@@ -14,6 +14,7 @@ function renderMainContent(container) {
   const todoSection = createMainTodoSection();
 
   container.append(sidebar, todoSection);
+  renderProjects();
 }
 
 function renderModals(root) {

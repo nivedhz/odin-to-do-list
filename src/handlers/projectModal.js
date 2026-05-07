@@ -8,7 +8,6 @@ function projectModalToggleHidden() {
 }
 
 function initProjectModal() {
-  createProject();
   document
     .querySelector(".project-modal__form-container")
     .addEventListener("submit", (event) => {

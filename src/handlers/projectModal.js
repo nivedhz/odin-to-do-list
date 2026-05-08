@@ -1,13 +1,20 @@
 import { createProject } from "../data/state.js";
 import { renderProjects } from "../ui/render.js";
+import { state } from "../data/state.js";
 
 function projectModalToggleHidden() {
   document
     .querySelector(".project-modal__container")
     .classList.toggle("hidden");
 }
+function initCurrentProject() {
+  if (state.projects[0]) {
+    state.currentProject = state.projects[0];
+  }
+}
 
 function initProjectModal() {
+  initCurrentProject();
   document
     .querySelector(".project-modal__form-container")
     .addEventListener("submit", (event) => {

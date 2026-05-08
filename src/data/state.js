@@ -16,7 +16,6 @@ function createProject(projectName) {
     todo: [],
   };
   state.projects.push(Project);
-  state.currentProject = state.projects[0];
 }
 function createTodo(name, projectId, priority, date, longSummary) {
   const Todo = {

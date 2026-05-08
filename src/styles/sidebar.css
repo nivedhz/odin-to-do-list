@@ -48,6 +48,7 @@ button {
   display: flex;
   font-family: "Poppins", sans-serif;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
   border-radius: 10px;
 }
@@ -88,4 +89,12 @@ button {
 .project-name__heading {
   font-weight: 400;
   font-size: 1rem;
+}
+.project__bottom-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.active-project {
+  background-color: rgba(0, 0, 255, 0.2) !important;
 }

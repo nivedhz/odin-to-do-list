@@ -9,9 +9,16 @@ import { createProjectDetailName } from "../ui/sidebar/ProjectDetails.js";
 import { createTodoElement } from "./main/TodoSection.js";
 import { state } from "../data/state.js";
 
+function initCurrentProject() {
+  if (!state.currentProject) {
+    state.currentProject = state.projects[0];
+  }
+}
+
 function renderMainContent(container) {
+  initCurrentProject();
   const sidebar = createSidebar();
-  const todoSection = createMainTodoSection();
+  const todoSection = createMainTodoSection(state.currentProject.projectName);
 
   container.append(sidebar, todoSection);
   renderProjects();
@@ -30,26 +37,22 @@ function renderProjects() {
   state.projects.forEach((project) => {
     document
       .querySelector(".project__bottom-container")
-      .append(createProjectDetailName(project.projectName));
+      .append(createProjectDetailName(project.projectName, project.projectId));
   });
 }
-function renderTodo(projectId) {
+function renderTodo() {
   document.querySelector(".todo__container").replaceChildren();
-  state.projects.forEach((project) => {
-    if (project.projectId === projectId) {
-      project.todo.forEach((todo) => {
-        document
-          .querySelector(".todo__container")
-          .append(
-            createTodoElement(
-              todo.name,
-              todo.priority,
-              todo.date,
-              todo.longSummary,
-            ),
-          );
-      });
-    }
+  state.currentProject.todo.forEach((todo) => {
+    document
+      .querySelector(".todo__container")
+      .append(
+        createTodoElement(
+          todo.name,
+          todo.priority,
+          todo.date,
+          todo.longSummary,
+        ),
+      );
   });
 }
 

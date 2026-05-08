@@ -21,7 +21,7 @@ function createProjectHeading() {
   projectHeadingContainer.append(myProjects, addProjectsBtn);
   return projectHeadingContainer;
 }
-export function createProjectDetailName(projectName) {
+export function createProjectDetailName(projectName, projectId) {
   const projectNameContainer = document.createElement("div");
   const projectNameEl = document.createElement("h3");
   const projectBtnContainer = document.createElement("div");
@@ -37,6 +37,8 @@ export function createProjectDetailName(projectName) {
   projectBtnContainer.classList.add("project-name__btn-container");
   editProject.classList.add("project-name__edit-btn");
   removeProject.classList.add("project-name__remove-btn");
+
+  projectNameContainer.dataset.id = projectId;
 
   editProjectBtn.append(editProject);
   removeProjectBtn.append(removeProject);

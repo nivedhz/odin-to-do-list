@@ -1,6 +1,6 @@
 import addTaskImg from "../../assets/images/add-task.svg";
 
-function createHeaderSection() {
+function createHeaderSection(projectName) {
   const headerSection = document.createElement("div");
   headerSection.classList.add("header-section");
   const projectNameEl = document.createElement("h1");
@@ -12,7 +12,7 @@ function createHeaderSection() {
 
   addTodo.append(addTodoImg);
 
-  projectNameEl.textContent = "# Project 1";
+  projectNameEl.textContent = `## ${projectName}`;
   addTodoImg.src = addTaskImg;
 
   headerSection.append(projectNameEl, addTodo);

@@ -33,8 +33,9 @@ function initTodoModal() {
         values.dueDate,
         values.longSummary,
       );
-      renderTodo(state.currentProject.projectId);
+      renderTodo();
       document.querySelector(".task-modal__form-container").reset();
+      console.log(state);
     });
 
   document

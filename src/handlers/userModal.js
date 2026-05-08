@@ -16,7 +16,6 @@ function initUserModal() {
   document
     .querySelector(".profile-modal__img-input")
     .addEventListener("change", (event) => {
-      console.log(event.target.files[0]);
       document.querySelector(".profile-modal__img-preview").src =
         URL.createObjectURL(event.target.files[0]);
     });

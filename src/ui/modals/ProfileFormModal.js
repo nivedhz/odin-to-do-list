@@ -1,4 +1,4 @@
-import defaultUserProfile from "../../assets/images/default-user.svg";
+import { state } from "../../data/state.js";
 import "../../styles/profile-form-modal.css";
 
 function createImgForm() {
@@ -10,7 +10,7 @@ function createImgForm() {
   imgIconOverlay.setAttribute("for", "ImgUpload");
   const imgPreview = document.createElement("img");
   imgPreview.classList.add("profile-modal__img-preview");
-  imgPreview.src = defaultUserProfile;
+  imgPreview.src = state.profilePicture;
   const imgInfo = document.createElement("p");
   imgInfo.textContent = "Add a Profile Picutre";
   const imgInput = document.createElement("input");

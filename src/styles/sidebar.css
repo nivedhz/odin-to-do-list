@@ -32,9 +32,9 @@ button {
   align-items: center;
 }
 .profile__img {
-  max-width: 32px;
-  max-height: 32px;
-  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  border-radius: 1000px;
   outline: 2px solid black;
   padding: 0.1rem;
 }

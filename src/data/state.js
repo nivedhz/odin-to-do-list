@@ -1,4 +1,8 @@
+import defaultProfile from "../assets/images/default-user.svg";
+
 const state = {
+  username: "User",
+  profilePicture: defaultProfile,
   projects: [
     {
       projectName: "Starting Project",
@@ -32,5 +36,9 @@ function createTodo(name, projectId, priority, date, longSummary) {
     }
   });
 }
+function changeUserInfo(name, picture) {
+  state.profilePicture = picture;
+  state.username = name;
+}
 
-export { state, createProject, createTodo };
+export { state, createProject, createTodo, changeUserInfo };

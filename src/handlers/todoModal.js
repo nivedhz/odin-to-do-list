@@ -5,6 +5,23 @@ import { renderTodo } from "../ui/render.js";
 function todoModalToggleHidden() {
   document.querySelector(".task-modal__container").classList.toggle("hidden");
 }
+function handleTodoForm(event) {
+  event.preventDefault();
+  todoModalToggleHidden();
+  const data = new FormData(
+    document.querySelector(".task-modal__form-container"),
+  );
+  const values = Object.fromEntries(data.entries());
+  createTodo(
+    values.taskName,
+    state.currentProject.projectId,
+    values.taskPriority,
+    values.dueDate,
+    values.longSummary,
+  );
+  renderTodo();
+  document.querySelector(".task-modal__form-container").reset();
+}
 
 function initTodoModal() {
   document
@@ -12,31 +29,15 @@ function initTodoModal() {
     .addEventListener("click", todoModalToggleHidden);
 
   document.querySelector(".todo__container").addEventListener("click", (e) => {
-    if (e.target.closest(".todo__edit-btn")) {
-      todoModalToggleHidden();
-    }
+    const todoContainer = e.target.closest(".todo__grid");
+    const todoEditBtn = e.target.closest(".todo__edit-btn");
+    if (!todoContainer) return;
+    if (todoEditBtn) console.log(todoContainer.dataset.id);
   });
 
   document
     .querySelector(".task-modal__form-container")
-    .addEventListener("submit", (event) => {
-      event.preventDefault();
-      todoModalToggleHidden();
-      const data = new FormData(
-        document.querySelector(".task-modal__form-container"),
-      );
-      const values = Object.fromEntries(data.entries());
-      createTodo(
-        values.taskName,
-        state.currentProject.projectId,
-        values.taskPriority,
-        values.dueDate,
-        values.longSummary,
-      );
-      renderTodo();
-      document.querySelector(".task-modal__form-container").reset();
-      console.log(state);
-    });
+    .addEventListener("submit", handleTodoForm);
 
   document
     .querySelector(".task-modal__quit-btn")

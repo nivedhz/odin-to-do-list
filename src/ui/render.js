@@ -51,6 +51,7 @@ function renderTodo() {
           todo.priority,
           todo.date,
           todo.longSummary,
+          todo.todoId,
         ),
       );
   });

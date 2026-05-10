@@ -14,6 +14,7 @@ function createTodoElement(
   todoPriority,
   todoDueDate,
   todoLongSummary,
+  todoId,
 ) {
   const todoEl = document.createElement("div");
   todoEl.classList.add("todo__grid");
@@ -43,6 +44,7 @@ function createTodoElement(
 
   todoNameEl.textContent = todoName;
   editTodoImgEl.src = editTodoImg;
+  todoEl.dataset.id = todoId;
 
   editTodoBtn.append(editTodoImgEl);
   todoRightContainer.append(checkBox, todoNameEl);

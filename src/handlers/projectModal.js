@@ -9,26 +9,59 @@ function projectModalToggleHidden() {
 }
 function applyActiveClass() {
   document.querySelectorAll(".project-name__container").forEach((project) => {
+    project.classList.remove("active-project");
     if (project.dataset.id === state.currentProject.projectId)
       project.classList.add("active-project");
   });
+}
+function renameProjectHeading() {
+  document.querySelector(".header__project-name").textContent =
+    `## ${state.currentProject.projectName}`;
+}
+function handleProjectForm(event) {
+  event.preventDefault();
+  projectModalToggleHidden();
+  const data = new FormData(
+    document.querySelector(".project-modal__form-container"),
+  );
+  const values = Object.fromEntries(data.entries());
+  createProject(values.projectName);
+  renderProjects();
+  applyActiveClass();
+  document.querySelector(".project-modal__form-container").reset();
+}
+function handleDelegatedProjectFunctions(event) {
+  const projectContainer = event.target.closest(".project-name__container");
+  const projectEditBtn = event.target.closest(".project__edit-btn");
+  const projectRemoveBtn = event.target.closest(".project__remove-btn");
+  if (!projectContainer) return;
+
+  if (projectContainer) {
+    state.currentProject = state.projects.find(
+      (project) => project.projectId === projectContainer.dataset.id,
+    );
+    applyActiveClass();
+    renameProjectHeading();
+    renderTodo();
+  }
+  if (projectEditBtn) return;
+  if (projectRemoveBtn) {
+    if (state.projects.length <= 1) return;
+    state.projects = state.projects.filter((project) => {
+      return project.projectId !== projectContainer.dataset.id;
+    });
+    renderProjects();
+    state.currentProject = state.projects[0];
+    applyActiveClass();
+    renameProjectHeading();
+    renderTodo();
+  }
 }
 
 function initProjectModal() {
   document
     .querySelector(".project-modal__form-container")
-    .addEventListener("submit", (event) => {
-      event.preventDefault();
-      projectModalToggleHidden();
-      const data = new FormData(
-        document.querySelector(".project-modal__form-container"),
-      );
-      const values = Object.fromEntries(data.entries());
-      createProject(values.projectName);
-      renderProjects();
-      applyActiveClass();
-      document.querySelector(".project-modal__form-container").reset();
-    });
+    .addEventListener("submit", handleProjectForm);
   document
     .querySelector(".project__add-btn")
     .addEventListener("click", projectModalToggleHidden);
@@ -37,28 +70,7 @@ function initProjectModal() {
     .addEventListener("click", projectModalToggleHidden);
   document
     .querySelector(".project__bottom-container")
-    .addEventListener("click", (e) => {
-      if (e.target.closest(".project-name__heading")) return;
-      if (e.target.closest(".project__remove-btn")) return;
-      if (e.target.closest(".project-name__edit-btn")) return;
-      if (e.target.closest(".project__edit-btn")) {
-        projectModalToggleHidden();
-      }
-      if (e.target.closest(".project-name__container")) {
-        state.currentProject = state.projects.find(
-          (project) => project.projectId === e.target.dataset.id,
-        );
-        document
-          .querySelectorAll(".project-name__container")
-          .forEach((project) => {
-            project.classList.remove("active-project");
-          });
-        applyActiveClass();
-        document.querySelector(".header__project-name").textContent =
-          `## ${state.currentProject.projectName}`;
-        renderTodo();
-      }
-    });
+    .addEventListener("click", handleDelegatedProjectFunctions);
   applyActiveClass();
 }
 

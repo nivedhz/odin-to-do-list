@@ -30,6 +30,26 @@ function handleProjectForm(event) {
   applyActiveClass();
   document.querySelector(".project-modal__form-container").reset();
 }
+function containerEvent(projectContainer) {
+  state.currentProject = state.projects.find(
+    (project) => project.projectId === projectContainer.dataset.id,
+  );
+  applyActiveClass();
+  renameProjectHeading();
+  renderTodo();
+}
+function removeBtnEvent(projectContainer) {
+  if (state.projects.length <= 1) return;
+  state.projects = state.projects.filter((project) => {
+    return project.projectId !== projectContainer.dataset.id;
+  });
+  renderProjects();
+  state.currentProject = state.projects[0];
+  applyActiveClass();
+  renameProjectHeading();
+  renderTodo();
+}
+
 function handleDelegatedProjectFunctions(event) {
   const projectContainer = event.target.closest(".project-name__container");
   const projectEditBtn = event.target.closest(".project__edit-btn");
@@ -37,24 +57,11 @@ function handleDelegatedProjectFunctions(event) {
   if (!projectContainer) return;
 
   if (projectContainer) {
-    state.currentProject = state.projects.find(
-      (project) => project.projectId === projectContainer.dataset.id,
-    );
-    applyActiveClass();
-    renameProjectHeading();
-    renderTodo();
+    containerEvent(projectContainer);
   }
   if (projectEditBtn) return;
   if (projectRemoveBtn) {
-    if (state.projects.length <= 1) return;
-    state.projects = state.projects.filter((project) => {
-      return project.projectId !== projectContainer.dataset.id;
-    });
-    renderProjects();
-    state.currentProject = state.projects[0];
-    applyActiveClass();
-    renameProjectHeading();
-    renderTodo();
+    removeBtnEvent(projectContainer);
   }
 }
 

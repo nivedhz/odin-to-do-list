@@ -23,17 +23,22 @@ function initUserModal() {
     .querySelector(".profile-modal__form-container")
     .addEventListener("submit", (event) => {
       event.preventDefault();
-      userModalToggleHidden();
-      document.querySelector(".profile__right-container").replaceChildren();
+
       const data = new FormData(
         document.querySelector(".profile-modal__form-container"),
       );
+
       const values = Object.fromEntries(data.entries());
-      changeUserInfo(
-        values.profileUsername,
-        URL.createObjectURL(values.profilePicture),
-      );
-      editAccountDetails(state.profilePicture, state.username);
+      const reader = new FileReader();
+
+      document.querySelector(".profile__right-container").replaceChildren();
+      reader.addEventListener("load", () => {
+        changeUserInfo(values.profileUsername, reader.result);
+        editAccountDetails(state.profilePicture, state.username);
+        userModalToggleHidden();
+      });
+
+      reader.readAsDataURL(values.profilePicture);
     });
 
   document

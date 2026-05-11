@@ -58,6 +58,7 @@ function removeBtnEvent(projectContainer) {
   });
   renderProjects();
   state.currentProject = state.projects[0];
+  localStorage.setItem("state", JSON.stringify(state));
   applyActiveClass();
   renameProjectHeading();
   renderTodo();
@@ -103,6 +104,7 @@ function initProjectModal() {
   document
     .querySelector(".project__bottom-container")
     .addEventListener("click", handleDelegatedProjectFunctions);
+  state.currentProject = state.projects[0];
   applyActiveClass();
 }
 

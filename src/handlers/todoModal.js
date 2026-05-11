@@ -63,6 +63,7 @@ function checkboxEvent(todoContainer, todoCheckbox) {
         (todo) => todo.todoId !== state.currentTodo.todoId,
       );
       renderTodo();
+      localStorage.setItem("state", JSON.stringify(state));
     }, 1500);
   }
 }

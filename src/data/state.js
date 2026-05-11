@@ -1,6 +1,6 @@
 import defaultProfile from "../assets/images/default-user.svg";
 
-const state = {
+const defaultState = {
   username: "User",
   profilePicture: defaultProfile,
   editMode: false,
@@ -36,6 +36,9 @@ const state = {
   currentProject: null,
   currentTodo: null,
 };
+const storedState = JSON.parse(localStorage.getItem("state"));
+
+const state = storedState || defaultState;
 
 function createProject(projectName) {
   const Project = {
@@ -44,6 +47,7 @@ function createProject(projectName) {
     todo: [],
   };
   state.projects.push(Project);
+  localStorage.setItem("state", JSON.stringify(state));
 }
 function createTodo(name, projectId, priority, date, longSummary) {
   const Todo = {
@@ -59,10 +63,12 @@ function createTodo(name, projectId, priority, date, longSummary) {
       project.todo.push(Todo);
     }
   });
+  localStorage.setItem("state", JSON.stringify(state));
 }
 function changeUserInfo(name, picture) {
   state.profilePicture = picture;
   state.username = name;
+  localStorage.setItem("state", JSON.stringify(state));
 }
 
 export { state, createProject, createTodo, changeUserInfo };

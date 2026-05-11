@@ -3,6 +3,7 @@ import defaultProfile from "../assets/images/default-user.svg";
 const state = {
   username: "User",
   profilePicture: defaultProfile,
+  editMode: false,
   projects: [
     {
       projectName: "Starting Project",

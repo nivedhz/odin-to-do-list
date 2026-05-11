@@ -28,9 +28,17 @@ function handleProjectForm(event) {
     document.querySelector(".project-modal__form-container"),
   );
   const values = Object.fromEntries(data.entries());
-  createProject(values.projectName);
-  renderProjects();
-  applyActiveClass();
+  if (!state.editMode) {
+    createProject(values.projectName);
+    renderProjects();
+    applyActiveClass();
+  } else {
+    state.currentProject.projectName = values.projectName;
+    renderProjects();
+    applyActiveClass();
+    renameProjectHeading();
+    state.editMode = state.editMode === true ? false : true;
+  }
   document.querySelector(".project-modal__form-container").reset();
 }
 
@@ -55,6 +63,16 @@ function removeBtnEvent(projectContainer) {
   renderTodo();
 }
 
+function editBtnEvent(projectContainer) {
+  state.editMode = state.editMode === true ? false : true;
+  const project = state.projects.find(
+    (project) => project.projectId === projectContainer.dataset.id,
+  );
+  projectModalToggleHidden();
+  document.querySelector(".project-modal__name-input").value =
+    project.projectName;
+}
+
 function handleDelegatedProjectFunctions(event) {
   const projectContainer = event.target.closest(".project-name__container");
   const projectEditBtn = event.target.closest(".project__edit-btn");
@@ -65,7 +83,7 @@ function handleDelegatedProjectFunctions(event) {
     containerEvent(projectContainer);
   }
   if (projectEditBtn) {
-    return;
+    editBtnEvent(projectContainer);
   }
   if (projectRemoveBtn) {
     removeBtnEvent(projectContainer);

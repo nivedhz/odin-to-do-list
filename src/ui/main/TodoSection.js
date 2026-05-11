@@ -1,14 +1,5 @@
 import editTodoImg from "../../assets/images/edit-todo.svg";
 
-function createTodoDate() {
-  const todoDate = document.createElement("h1");
-  todoDate.classList.add("todo__date");
-
-  todoDate.textContent = "## Today";
-
-  return todoDate;
-}
-
 function createTodoElement(
   todoName,
   todoPriority,
@@ -69,10 +60,9 @@ function createTodoSection() {
   const todoSection = document.createElement("div");
   todoSection.classList.add("todo-section");
 
-  const todoDate = createTodoDate();
   const todoContainer = createtodoContainer();
 
-  todoSection.append(todoDate, todoContainer);
+  todoSection.append(todoContainer);
   return todoSection;
 }
 

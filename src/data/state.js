@@ -6,72 +6,11 @@ const state = {
   editMode: false,
   projects: [
     {
-      projectName: "Frontend Grind",
+      projectName: "Starting Project",
       projectId: crypto.randomUUID(),
-      todo: [
-        {
-          name: "Fix modal rendering",
-          todoId: crypto.randomUUID(),
-          priority: "High",
-          date: "2026-05-10",
-          longSummary:
-            "Investigate why modal listeners stop working after rerender.",
-        },
-        {
-          name: "Refactor render flow",
-          todoId: crypto.randomUUID(),
-          priority: "Medium",
-          date: "2026-05-11",
-          longSummary:
-            "Separate rendering logic from delegated event handlers.",
-        },
-      ],
-    },
-
-    {
-      projectName: "Gym Progression",
-      projectId: crypto.randomUUID(),
-      todo: [
-        {
-          name: "Push Day",
-          todoId: crypto.randomUUID(),
-          priority: "High",
-          date: "2026-05-12",
-          longSummary: "Focus on incline dumbbell press and controlled reps.",
-        },
-        {
-          name: "Track protein intake",
-          todoId: crypto.randomUUID(),
-          priority: "Low",
-          date: "2026-05-13",
-          longSummary: "Hit daily protein goal and monitor consistency.",
-        },
-      ],
-    },
-
-    {
-      projectName: "Life Admin",
-      projectId: crypto.randomUUID(),
-      todo: [
-        {
-          name: "Organize study notes",
-          todoId: crypto.randomUUID(),
-          priority: "Medium",
-          date: "2026-05-15",
-          longSummary: "Sort notes by subject and remove duplicate PDFs.",
-        },
-        {
-          name: "Backup project repos",
-          todoId: crypto.randomUUID(),
-          priority: "High",
-          date: "2026-05-16",
-          longSummary:
-            "Push all active branches and clean old experimental commits.",
-        },
-      ],
+      todo: [],
     },
   ],
-
   currentProject: null,
   currentTodo: null,
 };

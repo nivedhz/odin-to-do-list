@@ -8,7 +8,29 @@ const state = {
     {
       projectName: "Starting Project",
       projectId: crypto.randomUUID(),
-      todo: [],
+      todo: [
+        {
+          name: "Todo with Low Priority",
+          todoId: crypto.randomUUID(),
+          priority: "Low",
+          date: new Date().toISOString().split("T")[0],
+          longSummary: "A test todo to find out what all this can do",
+        },
+        {
+          name: "Todo with Medium Priority",
+          todoId: crypto.randomUUID(),
+          priority: "Medium",
+          date: new Date().toISOString().split("T")[0],
+          longSummary: "A test todo to find out what all this can do",
+        },
+        {
+          name: "Todo with High Priority",
+          todoId: crypto.randomUUID(),
+          priority: "High",
+          date: new Date().toISOString().split("T")[0],
+          longSummary: "A test todo to find out what all this can do",
+        },
+      ],
     },
   ],
   currentProject: null,

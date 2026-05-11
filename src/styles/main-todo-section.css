@@ -114,3 +114,7 @@
 .high-priority {
   border-left-color: red;
 }
+.checked-todo {
+  opacity: 0.5;
+  text-decoration: line-through;
+}

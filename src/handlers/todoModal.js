@@ -41,7 +41,6 @@ function containerEvent(todoContainer) {
   } else {
     state.currentTodo = null;
   }
-  console.log(state.currentTodo);
 }
 
 function editBtnEvent(todoContainer) {
@@ -56,6 +55,17 @@ function editBtnEvent(todoContainer) {
     todo.longSummary;
   todoModalToggleHidden();
 }
+function checkboxEvent(todoContainer, todoCheckbox) {
+  if (todoCheckbox.checked) {
+    todoContainer.classList.add("checked-todo");
+    setTimeout(() => {
+      state.currentProject.todo = state.currentProject.todo.filter(
+        (todo) => todo.todoId !== state.currentTodo.todoId,
+      );
+      renderTodo();
+    }, 1500);
+  }
+}
 
 function initTodoModal() {
   document
@@ -65,9 +75,12 @@ function initTodoModal() {
   document.querySelector(".todo__container").addEventListener("click", (e) => {
     const todoContainer = e.target.closest(".todo__grid");
     const todoEditBtn = e.target.closest(".todo__edit-btn");
+    const todoCheckbox = e.target.closest(".todo__checkbox");
+
     if (!todoContainer) return;
     if (todoContainer) containerEvent(todoContainer);
     if (todoEditBtn) editBtnEvent(todoContainer);
+    if (todoCheckbox) checkboxEvent(todoContainer, todoCheckbox);
   });
 
   document

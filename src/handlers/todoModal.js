@@ -32,6 +32,7 @@ function initTodoModal() {
     const todoContainer = e.target.closest(".todo__grid");
     const todoEditBtn = e.target.closest(".todo__edit-btn");
     if (!todoContainer) return;
+    if (todoContainer) todoContainer.classList.toggle("todo-grid__onclick");
     if (todoEditBtn) console.log(todoContainer.dataset.id);
   });
 

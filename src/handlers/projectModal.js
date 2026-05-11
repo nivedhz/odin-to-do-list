@@ -7,6 +7,7 @@ function projectModalToggleHidden() {
     .querySelector(".project-modal__container")
     .classList.toggle("hidden");
 }
+
 function applyActiveClass() {
   document.querySelectorAll(".project-name__container").forEach((project) => {
     project.classList.remove("active-project");
@@ -14,10 +15,12 @@ function applyActiveClass() {
       project.classList.add("active-project");
   });
 }
+
 function renameProjectHeading() {
   document.querySelector(".header__project-name").textContent =
     `## ${state.currentProject.projectName}`;
 }
+
 function handleProjectForm(event) {
   event.preventDefault();
   projectModalToggleHidden();
@@ -30,6 +33,7 @@ function handleProjectForm(event) {
   applyActiveClass();
   document.querySelector(".project-modal__form-container").reset();
 }
+
 function containerEvent(projectContainer) {
   state.currentProject = state.projects.find(
     (project) => project.projectId === projectContainer.dataset.id,
@@ -38,6 +42,7 @@ function containerEvent(projectContainer) {
   renameProjectHeading();
   renderTodo();
 }
+
 function removeBtnEvent(projectContainer) {
   if (state.projects.length <= 1) return;
   state.projects = state.projects.filter((project) => {
@@ -59,7 +64,9 @@ function handleDelegatedProjectFunctions(event) {
   if (projectContainer) {
     containerEvent(projectContainer);
   }
-  if (projectEditBtn) return;
+  if (projectEditBtn) {
+    return;
+  }
   if (projectRemoveBtn) {
     removeBtnEvent(projectContainer);
   }
